@@ -99,6 +99,14 @@
               Eager to apply versatile skillset, including ECE background, to
               make a positive contribution.
             </p>
+            <div class="">
+              <a href="https://www.linkedin.com/in/abhishek-valasseri/"
+                ><i class="bi bi-linkedin display-6"></i
+              ></a>
+              <a href="https://github.com/abhiofcl"
+                ><i class="bi bi-github display-6"></i
+              ></a>
+            </div>
           </div>
         </div>
       </div>
@@ -142,7 +150,7 @@
     <section id="projects">
       <div class="container">
         <h1 class="text-center p-4 mt-2">Projects</h1>
-        <div style="width: 50rem; margin: auto">
+        <div class="projectcontainer" style="margin: auto">
           <div id="carouselExampleCaptions" class="carousel slide">
             <div class="carousel-indicators">
               <button
@@ -297,7 +305,31 @@
         </form>
       </div>
     </section>
-    <footer></footer>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center p-5">
+            Abhishek V
+            <br />
+            <i class="bi bi-envelope m-2"></i
+            ><a
+              class="text-light"
+              href="mailto:abhishekvalasseri@gmail.com"
+              style="text-decoration: none"
+              >abhishekvalasseri@gmail.com</a
+            >
+            <br />
+            <a href="https://www.linkedin.com/in/abhishek-valasseri/"
+              ><i class="bi bi-linkedin"></i
+            ></a>
+            <a href="https://github.com/abhiofcl"
+              ><i class="bi bi-github"></i
+            ></a>
+            <p>Copyright</p>
+          </div>
+        </div>
+      </div>
+    </footer>
     <script>
       $("#contactform").submit((e) => {
         e.preventDefault();
@@ -306,9 +338,7 @@
           url: "https://script.google.com/macros/s/AKfycbyOw-iqz26-6JaJ-FIX6_G-Z5OCRQaHZhwBxqaCtz07XmMAZVA6_gPJ26JjP_93UV01/exec",
           data: $("#contactform").serialize(),
           method: "post",
-          headers: {
-            "Access-Control-Allow-Origin": "*",
-          },
+
           success: function (response) {
             alert("Form submitted successfully");
             window.location.reload();
