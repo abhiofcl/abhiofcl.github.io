@@ -19,6 +19,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <title>Document</title>
   </head>
@@ -137,7 +138,7 @@
         </div>
       </div>
     </section>
-
+    <!-- Projects Section -->
     <section id="projects">
       <div class="container">
         <h1 class="text-center p-4 mt-2">Projects</h1>
@@ -254,12 +255,13 @@
     >
       <div class="container">
         <h2 class="text-center mb-4">Get in Touch</h2>
-        <form class="row needs-validation p-5" id="contactform" novalidate>
+        <form class="row needs-validation p-5" id="contactform" action="">
           <div class="col-12 mb-3">
             <label for="name" class="form-label">Name</label>
             <input
               type="text"
               class="form-control"
+              name="name"
               id="name"
               placeholder="Your name"
               required
@@ -272,6 +274,7 @@
               type="email"
               class="form-control"
               id="email"
+              name="email"
               placeholder="your@email.com"
               required
             />
@@ -284,6 +287,7 @@
             <textarea
               class="form-control"
               id="message"
+              name="message"
               rows="3"
               placeholder="Write your message..."
               required
@@ -293,7 +297,29 @@
         </form>
       </div>
     </section>
-
+    <footer></footer>
+    <script>
+      $("#contactform").submit((e) => {
+        e.preventDefault();
+        $.ajax({
+          crossDomain: true,
+          url: "https://script.google.com/macros/s/AKfycbyOw-iqz26-6JaJ-FIX6_G-Z5OCRQaHZhwBxqaCtz07XmMAZVA6_gPJ26JjP_93UV01/exec",
+          data: $("#contactform").serialize(),
+          method: "post",
+          headers: {
+            "Access-Control-Allow-Origin": "*",
+          },
+          success: function (response) {
+            alert("Form submitted successfully");
+            window.location.reload();
+            //window.location.href="https://google.com"
+          },
+          error: function (err) {
+            alert("Something Error");
+          },
+        });
+      });
+    </script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
