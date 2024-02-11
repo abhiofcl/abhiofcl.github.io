@@ -17,6 +17,10 @@
   .projectcontainer {
     width: 25rem;
   }
+  .pfp {
+    display: flex;
+    justify-content: center;
+  }
 }
 @media (min-width: 767px) {
   .projectcontainer {
