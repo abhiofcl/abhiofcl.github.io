@@ -1,5 +1,15 @@
+/* .carousel-inner > .carousel-item {
+  height: 400px;
+} */
+
 @media (min-width: 767px) {
-  .intro {
+  #skills {
+    height: 100vh;
+  }
+  #projects {
+    height: 100vh;
+  }
+  #about {
     height: 100vh;
   }
 }
